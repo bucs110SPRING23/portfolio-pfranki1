@@ -1,0 +1,21 @@
+import pygame
+import random
+pygame.init()
+
+window=pygame.display.set_mode()
+pygame.display.flip()
+size=pygame.display.get_window_size()
+print(size)
+
+window.fill("blue")
+pygame.draw.circle(window, "red", [700,450], 450)
+pygame.draw.line(window, "black",(0,size[1]/2),(size[0],size[1]/2),5)
+pygame.draw.line(window, "black",(size[0]/2,0),(size[0]/2,size[1]),5)
+pygame.display.flip()
+pygame.time.wait(3000)
+pygame.display.flip()
+
+for i in range(10):
+    x1=random.randrange(0,size[1])
+    y1=random.randrange(0,size{0})
+    distance_from_center=math.hypot(x1-)
