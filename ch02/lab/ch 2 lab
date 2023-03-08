@@ -1,0 +1,65 @@
+import turtle 
+
+screen = turtle.Screen()
+rosie = turtle.Turtle()
+jack = turtle.Turtle()
+
+jack.color("blue")
+rosie.color("red")
+rosie.shape("turtle")
+jack.shape("turtle")
+
+rosie.up()
+jack.up()
+rosie.goto(-100,20)
+jack.goto(-100,-20)
+rosie.down()
+jack.down()
+
+#Race 1
+import random
+x = random.randrange(1,100)
+import random
+y = random.randrange(1,100)
+rosie.forward(x)
+jack.forward(y)
+rosie.goto(-100,20)
+jack.goto(-100,-20)
+
+#Race 2
+for _ in range(0,10):
+    rosie.forward(random.randrange(1,10))
+    jack.forward(random.randrange(1,10))
+rosie.goto(-100,20)
+jack.goto(-100,-20)
+
+screen.exitonclick()
+
+import pygame
+import math 
+
+pygame.init()
+window=pygame.display.set_mode()
+pygame.display.flip()
+xpos = 200
+ypos = 200
+side_length = 60 
+
+for num_sides in [3,4,6,20,100,360]:
+    points=[]
+    for i in range(num_sides):
+        angle=360/num_sides 
+        radians=math.radians(angle*i)
+        y=ypos+side_length*math.sin(radians)
+        x=xpos+side_length*math.cos(radians)
+        points.append((x,y))
+    pygame.draw.polygon(window, 'red', points)
+    pygame.display.flip()
+    pygame.time.wait(2000)
+    window.fill('black')
+    pygame.display.flip()
+
+
+
+
+
