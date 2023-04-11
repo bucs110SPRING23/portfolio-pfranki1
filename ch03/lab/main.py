@@ -1,26 +1,32 @@
-import turtle #1. import modules
+import pygame
 import random
+import math
 
-#Part A
-window = turtle.Screen() # 2.  Create a screen
-window.bgcolor('lightblue')
+pygame.init()
 
-michelangelo = turtle.Turtle() # 3.  Create two turtles
-leonardo = turtle.Turtle()
-michelangelo.color('orange')
-leonardo.color('blue')
-michelangelo.shape('turtle')
-leonardo.shape('turtle')
+window=pygame.display.set_mode()
+pygame.display.flip()
+size=pygame.display.get_window_size()
+print(size)
 
-michelangelo.up() # 4. Pick up the pen so we don’t get lines
-leonardo.up()
-michelangelo.goto(-100,20)
-leonardo.goto(-100,-20)
+window.fill("blue")
+pygame.draw.circle(window, "pink", [700,450], 450)
+pygame.draw.line(window, "black",(0,size[1]/2),(size[0],size[1]/2),5)
+pygame.draw.line(window, "black",(size[0]/2,0),(size[0]/2,size[1]),5)
+pygame.display.flip()
+pygame.time.wait(3000)
+pygame.display.flip()
 
-## 5. Your PART A code goes here
-
-
-# PART B - complete part B here
-
-
-window.exitonclick()
+for i in range(10):
+    x1=random.randrange(0,size[0])
+    y1=random.randrange(0,size[1])
+    distance_from_center=math.hypot(x1-size[0]/2, y1-size[1]/2)
+    in_circle=(distance_from_center <= size[1]/2)
+    if in_circle:
+        pygame.draw.circle(window, "green", (x1,y1),15)
+    else:
+        pygame.draw.circle(window, "red", (x1,y1), 15)
+    pygame.display.flip()
+    pygame.time.wait(1000)
+pygame.time.wait(3000)
+pygame.display.flip()
