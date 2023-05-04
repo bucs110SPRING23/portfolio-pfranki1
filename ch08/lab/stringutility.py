@@ -1,7 +1,7 @@
 class StringUtility:
-    def _init_(self,string):
+    def __init__(self,string):
         self.string=string
-    def _str_(self):
+    def __str__(self):
         return self.string
     def vowels(self):
         count=sum(1 for c in self.string if c.lower() in "aeiou")
