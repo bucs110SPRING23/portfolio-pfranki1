@@ -1,0 +1,168 @@
+def foo(param1, param2):
+    return param1 + param2
+
+def bar(param1=4, param2=3):
+    if True:
+        return param1+param2
+    else:
+        pass
+
+
+def max(a=0, b=0):
+    if a>b:
+        return a
+    else:
+        return b
+
+
+def percentage_to_letter(percent):
+        let= "A"
+        if percent < 90:
+            let="B"
+        elif percent < 80:
+            let="C"
+        elif percent < 70:
+            let="D"
+        else:
+            let="F"
+        return let
+
+def is_passing(letter):
+    passing=True
+    return passing
+
+def main():
+    grades=[90,80,70,60,50]
+    for grade in grades:
+        letter=percentage_to_letter(grade)
+        if is_passing(letter):
+            print("You passed!")
+        else:
+            print("Study more!")
+
+
+##########################################
+
+def main():
+    file_pointer=open("assets/ideas.txt", "r")
+    ideas=file_pointer.readline()
+    print(ideas)
+
+    file_pointer.close()
+    file_pointer=open("assets/ideas.txt", "r")
+    ideas=file_pointer.readline()
+    print(ideas)
+
+    #idea=input("Enter an idea:")
+    #ideas=[]
+    #ideas.append(idea)
+    #print(ideas)
+
+    file_pointer=open("assets/ideas.txt", "w")
+
+    idea=input("Enter an idea:")
+    ideas=[]
+    ideas.append(idea)
+    
+    for i in ideas:
+        file_pointer.write(i)
+    
+
+    file_pointer=open("assets/ideas.txt", "a")
+
+    idea=input("Enter an idea:")
+    ideas=[]
+    ideas.append(idea)
+    
+    #character for line break is "\n"
+
+    for i in ideas:
+        file_pointer.write(i + "\n")
+        x=5/0
+    file_pointer.close()
+
+main()
+
+import json
+#json is a string format not a file format
+file_contents=open("assets/ideas.txt", "r").read()
+print(file_contents, type(file_contents))
+date=json.loads(file_contents)
+print(data,type(data))
+
+#json=javascript object notiation/ string formats, not file formats
+{
+    "title": "The Matrix"
+}
+##############################
+def main():
+    filename= "news.txt"
+    fptr= open(filename, "r")
+    accumulator=0
+    for ch in fptr.red():
+        if ch.isalnum():
+            accumulator+=1
+    fptr.close()
+
+    fptr=open(filename+".dat", "w")
+    data=str(accumulator)+"characters"
+    fptr.write()
+
+main()
+
+###############################
+import json
+
+data= {
+    "num":1,
+    "msg":"Hello World",
+}
+
+json_string=json.dumps(data)
+print(json_string), type(json_string)
+
+json_data=json.loads(json_string)
+
+for k, v in json_data.items():
+    print(k,v)
+
+###########################################
+def main():
+    filename= "news.txt"
+    fptr= open(filename, "r")
+    idea=input("enter an idea:")
+    data=json.load(file_pointer)
+    data.append(idea)
+    accumulator=0
+    for ch in fptr.red():
+        if ch.isalnum():
+            accumulator+=1
+    fptr.close()
+
+    fptr=open(filename+".dat", "w")
+    data=str(accumulator)+"characters"
+    fptr.write()
+
+import json
+
+data= {
+    "num":1,
+    "msg":"Hello World",
+}
+
+json_string=json.dumps(data)
+print(json_string), type(json_string)
+
+json_data=json.loads(json_string)
+
+for k, v in json_data.items():
+    print(k,v)
+
+fptr= open("subs.json", "w")
+fptr.write(json_string)
+fptr=close()
+
+data_str=open("subs.json", "r").read()
+data=json.loads(data_str)
+fptr.close()
+print(data, type(data))
